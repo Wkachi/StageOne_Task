@@ -4,10 +4,9 @@ const dropDownArrow = document.querySelector('#dropDownArrow')
 const weekDays = document.querySelector('.weekDays')
 const dayOfTheWeek = document.querySelector('.dayOfTheWeek')
 const eachDay = document.querySelector('.eachDay')
-const eDwD = document.querySelectorAll('#eDwD')
 const thursday = document.querySelector('#thursday')
+const timeSpace = document.querySelector('#timeSpace')
 
-console.log(eDwD)
 
 dropDownArrow.addEventListener('click',() =>{
     weekDays.style.display = "block";
@@ -21,8 +20,11 @@ weekDays.addEventListener('click',(e) =>{
 
 })
 
-// !(weekDays).addEventListener('click',(e) =>{
-//     console.log('error')
-//     weekDays.style.display = "none";
+var currentDate = new Date();
+var utcTime = currentDate.getTime();
+var utcString = new Date(utcTime).toUTCString();
+console.log(utcString)
+timeSpace.innerHTML = utcString;
 
-// })
+
+
